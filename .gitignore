@@ -1,0 +1,3 @@
+# 排除 HTML 文件
+*.html
+*.htm
