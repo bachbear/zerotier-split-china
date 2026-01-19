@@ -179,7 +179,7 @@ $privateRoutes = @(
     @{Cidr = "192.168.0.0/16"; Mask = "255.255.0.0"},
     @{Cidr = "169.254.0.0/16"; Mask = "255.255.0.0"},
     @{Cidr = "127.0.0.0/8"; Mask = "255.0.0.0"},
-    @{Cidr = "224.0.0.0/4"; Mask = "240.0.0.0"}
+    @{Cidr = "224.0.0.0/4"; Mask = "240.0.0.0.0"}
 )
 
 Write-Host "Adding private IP routes..." -ForegroundColor Yellow
@@ -219,7 +219,6 @@ if (Test-Path "china-ip.txt") {
 
     # Update history file
     $historyContent = @"
-
 ZeroTier Route Configuration History
 ========================================
 Gateway: $localGateway
@@ -238,7 +237,6 @@ Routes: $($privateRoutes.Count + $count)
 
     # Update history file for private routes only
     $historyContent = @"
-
 ZeroTier Route Configuration History
 ========================================
 Gateway: $localGateway
